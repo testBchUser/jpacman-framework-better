@@ -19,6 +19,8 @@ import nl.tudelft.jpacman.npc.NPC;
  * @author Jeroen Roosen 
  */
 public class MapParser {
+    private int width;
+    private int height;
     private Square[][] grid;
     private List<NPC> ghosts;
     private List<Square> startPositions;
@@ -64,20 +66,20 @@ public class MapParser {
      * @return The level as represented by this text.
      */
     public Level parseMap(char[][] map) {
-        int width = map.length;
-        int height = map[0].length;
+        widt h = map.length;
+        height = map[0].length;
 
         grid = new Square[width][height];
         ghosts = new ArrayList<>();
         startPositions = new ArrayList<>();
 
-        makeGrid(map, width, height);
+        makeGrid(map);
 
         Board board = boardCreator.createBoard(grid);
         return levelCreator.createLevel(board, ghosts, startPositions);
     }
 
-    private void makeGrid(char[][] map, int width, int height) {
+    private void makeGrid(char[][] map) {
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
                 char c = map[x][y];
