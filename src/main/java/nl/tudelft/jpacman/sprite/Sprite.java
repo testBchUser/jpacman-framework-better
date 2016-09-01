@@ -1,6 +1,7 @@
 package nl.tudelft.jpacman.sprite;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 /**
  * Visual representation of some object.
@@ -23,7 +24,7 @@ public interface Sprite {
 	 * @param height
 	 *            The height of the destination draw area.
 	 */
-	void draw(Graphics g, int x, int y, int width, int height);
+    void draw(Graphics g, Rectangle r);
 
 	/**
 	 * Returns a portion of this sprite as a new Sprite.

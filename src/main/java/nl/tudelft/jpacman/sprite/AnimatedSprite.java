@@ -1,6 +1,7 @@
 package nl.tudelft.jpacman.sprite;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 /**
  * Animated sprite, renders the frame depending on the time of requesting the
@@ -118,9 +119,9 @@ public class AnimatedSprite implements Sprite {
 	}
 
 	@Override
-	public void draw(Graphics g, int x, int y, int width, int height) {
+    public void draw(Graphics g, Rectangle r) {
 		update();
-		currentSprite().draw(g, x, y, width, height);
+        currentSprite().draw(g, r);
 	}
 
 	@Override

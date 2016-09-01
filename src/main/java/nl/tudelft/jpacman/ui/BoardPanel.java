@@ -3,6 +3,7 @@ package nl.tudelft.jpacman.ui;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 import javax.swing.JPanel;
 
@@ -89,7 +90,7 @@ class BoardPanel extends JPanel {
 				int cellX = x * cellW;
 				int cellY = y * cellH;
 				Square square = board.squareAt(x, y);
-				render(square, g, cellX, cellY, cellW, cellH);
+                render(square, g, new Rectangle(cellX, cellY, cellW, cellH));
 			}
 		}
 	}
@@ -111,10 +112,10 @@ class BoardPanel extends JPanel {
 	 * @param h
 	 *            The height of this square (in pixels.)
 	 */
-	private void render(Square square, Graphics g, int x, int y, int w, int h) {
-		square.getSprite().draw(g, x, y, w, h);
+    private void render(Square square, Graphics g, Rectangle r) {
+        square.getSprite().draw(g, r);
 		for (Unit unit : square.getOccupants()) {
-			unit.getSprite().draw(g, x, y, w, h);
+            unit.getSprite().draw(g, r);
 		}
 	}
 }

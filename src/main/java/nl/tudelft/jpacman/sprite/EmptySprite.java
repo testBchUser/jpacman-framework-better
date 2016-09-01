@@ -1,6 +1,7 @@
 package nl.tudelft.jpacman.sprite;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 /**
  * Empty Sprite which does not contain any data. When this sprite is drawn,
@@ -11,7 +12,7 @@ import java.awt.Graphics;
 public class EmptySprite implements Sprite {
 
 	@Override
-	public void draw(Graphics g, int x, int y, int width, int height) {
+    public void draw(Graphics g, Rectangle rectangle) {
 		// nothing to draw.
 	}
 
