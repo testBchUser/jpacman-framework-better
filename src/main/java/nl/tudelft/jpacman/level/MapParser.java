@@ -66,7 +66,7 @@ public class MapParser {
      * @return The level as represented by this text.
      */
     public Level parseMap(char[][] map) {
-        widt h = map.length;
+        width = map.length;
         height = map[0].length;
 
         grid = new Square[width][height];
